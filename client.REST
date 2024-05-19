@@ -1,0 +1,17 @@
+https://www.googleapis.com/youtube/v3/videos/?key=AIzaSyCB_jwO0CDx7oIHM3wUXTlU0zwiJOh12x8&part=snippet&id=YQHsXMglC9A
+
+###
+
+http://localhost:3000/api/youtube/search?query=hello&part="snippet"&type="video&maxResult=10
+
+###
+
+http://localhost:3000/api/youtube/videos/YQHsXMglC9A?&part="snippet,statistics,player,contentDetails"
+
+###
+
+http://localhost:3000/api/youtube/channels/UC9zX2xZIJ4cnwRsgBpHGvMg
+
+###
+
+https://www.googleapis.com/youtube/v3/channels/?id=UComP_epzeKzvBX156r6pm1Q&key=AIzaSyCB_jwO0CDx7oIHM3wUXTlU0zwiJOh12x8&part=snippet
