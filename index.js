@@ -79,6 +79,28 @@ app.get("/api/youtube/channels/:channelId", async (req, res) => {
   }
 });
 
+app.get("/api/youtube/comments/:videoId", async (req, res) => {
+  try {
+    const { videoId } = req.params;
+    const response = await axios.get(
+      "https://www.googleapis.com/youtube/v3/commentThreads",
+      {
+        params: {
+          videoId: videoId,
+          key: apiKey,
+          part: "snippet",
+          maxResults: 20,
+        },
+      }
+    );
+
+    res.json(response.data);
+  } catch (error) {
+    console.error("Error fetching comments:", error);
+    res.status(500).json({ error: "Internal server error" });
+  }
+});
+
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
