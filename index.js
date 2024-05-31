@@ -67,7 +67,7 @@ app.get("/api/youtube/channels/:channelId", async (req, res) => {
         params: {
           id: channelId,
           key: apiKey,
-          part: "snippet,id,statistics",
+          part: "snippet,id,statistics,brandingSettings",
         },
       }
     );

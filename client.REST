@@ -11,7 +11,7 @@ http://localhost:3000/api/youtube/videos/YQHsXMglC9A?&part="snippet,statistics,p
 
 ###
 
-http://localhost:3000/api/youtube/channels/UC9zX2xZIJ4cnwRsgBpHGvMg
+http://localhost:3000/api/youtube/channels/UComP_epzeKzvBX156r6pm1Q
 
 ###
 
