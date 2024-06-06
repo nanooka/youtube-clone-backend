@@ -20,3 +20,26 @@ https://www.googleapis.com/youtube/v3/channels/?id=UComP_epzeKzvBX156r6pm1Q&key=
 ###
 
 http://localhost:3000/api/youtube/comments/YQHsXMglC9A
+
+###
+
+http://localhost:3000/api/youtube/channel-videos/UComP_epzeKzvBX156r6pm1Q
+
+###
+http://localhost:3000/api/youtube/channel-playlists/UComP_epzeKzvBX156r6pm1Q
+
+###
+
+http://localhost:3000/api/youtube/channel-playlistItems/PLk7ySTbOWfFCZJ44nti0lz7nnMNMilFbs
+
+###
+
+http://localhost:3000/api/youtube/channel-live/UCPdYQsNTgNxyWiPtCCgB5xg
+
+###
+http://localhost:3000/api/youtube/channel-search?query=hello&channelId=UC9zX2xZIJ4cnwRsgBpHGvMg
+
+{
+    "query": "hello",
+    "channelId": "UC9zX2xZIJ4cnwRsgBpHGvMg"
+}
