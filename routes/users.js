@@ -50,7 +50,8 @@ router.get("/:id", (req, res) => {
 // sign up user
 router.post("/", async (req, res) => {
   try {
-    const { email, password } = req.body;
+    const { firstName, lastName, day, month, year, gender, email, password } =
+      req.body;
     const existingUser = await db.collection("users").findOne({ email });
 
     if (existingUser) {
@@ -60,7 +61,16 @@ router.post("/", async (req, res) => {
     }
 
     const hashedPassword = await bcrypt.hash(password, 10);
-    const user = new User({ email, password: hashedPassword });
+    const user = new User({
+      email,
+      password: hashedPassword,
+      firstName,
+      lastName,
+      day,
+      month,
+      year,
+      gender,
+    });
     const result = await db.collection("users").insertOne(user);
 
     res.status(201).json(result);

@@ -58,8 +58,14 @@ POST http://localhost:3000/users
 Content-Type: application/json
 
 {
-    "email": "newEmail@gmail.com",
-    "password": "newemail"
+    "email": "helllo@gmail.com",
+    "password": "newemail",
+    "firstName": "saxeli",
+    "lastName": "gvari",
+    "gender": "gender",
+    "day": "12",
+    "month": "January",
+    "year": "1990"
 }
 
 ###
