@@ -43,3 +43,31 @@ http://localhost:3000/api/youtube/channel-search?query=hello&channelId=UC9zX2xZI
     "query": "hello",
     "channelId": "UC9zX2xZIJ4cnwRsgBpHGvMg"
 }
+
+###
+
+GET http://localhost:3000/users
+
+###
+
+GET http://localhost:3000/users/666c30c81556ab5a9221efd2
+
+###
+
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+    "email": "newEmail@gmail.com",
+    "password": "newemail"
+}
+
+###
+
+POST http://localhost:3000/users/login
+Content-Type: application/json
+
+{
+    "email": "newEmail@gmail.com",
+    "password": "newemail"
+}

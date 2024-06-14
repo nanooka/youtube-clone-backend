@@ -1,17 +1,13 @@
 const express = require("express");
 const axios = require("axios");
-const cors = require("cors");
 
-const app = express();
-app.use(cors());
-const PORT = process.env.PORT || 3000;
+const router = express.Router();
 
-app.use(express.json());
-
-const apiKey = "AIzaSyCB_jwO0CDx7oIHM3wUXTlU0zwiJOh12x8";
+// const apiKey = "AIzaSyCB_jwO0CDx7oIHM3wUXTlU0zwiJOh12x8";
+const apiKey = "AIzaSyB9Y0VMkev57rkase2o37r_xJOceqga-h0";
 
 // API endpoint to fetch YouTube data
-app.get("/api/youtube/search", async (req, res) => {
+router.get("/search", async (req, res) => {
   try {
     const { query } = req.query;
     const response = await axios.get(
@@ -34,7 +30,7 @@ app.get("/api/youtube/search", async (req, res) => {
   }
 });
 
-app.get("/api/youtube/channel-search", async (req, res) => {
+router.get("/channel-search", async (req, res) => {
   try {
     const { query, channelId } = req.query;
 
@@ -65,7 +61,7 @@ app.get("/api/youtube/channel-search", async (req, res) => {
   }
 });
 
-app.get("/api/youtube/videos/:videoId", async (req, res) => {
+router.get("/videos/:videoId", async (req, res) => {
   try {
     const { videoId } = req.params;
     const response = await axios.get(
@@ -86,7 +82,7 @@ app.get("/api/youtube/videos/:videoId", async (req, res) => {
   }
 });
 
-app.get("/api/youtube/channels/:channelId", async (req, res) => {
+router.get("/channels/:channelId", async (req, res) => {
   try {
     const { channelId } = req.params;
     const response = await axios.get(
@@ -107,7 +103,7 @@ app.get("/api/youtube/channels/:channelId", async (req, res) => {
   }
 });
 
-app.get("/api/youtube/comments/:videoId", async (req, res) => {
+router.get("/comments/:videoId", async (req, res) => {
   try {
     const { videoId } = req.params;
     const response = await axios.get(
@@ -129,7 +125,7 @@ app.get("/api/youtube/comments/:videoId", async (req, res) => {
   }
 });
 
-app.get("/api/youtube/channel-videos/:channelId", async (req, res) => {
+router.get("/channel-videos/:channelId", async (req, res) => {
   try {
     const { channelId } = req.params;
     const { order = "date" } = req.query;
@@ -169,7 +165,7 @@ app.get("/api/youtube/channel-videos/:channelId", async (req, res) => {
   }
 });
 
-app.get("/api/youtube/channel-playlists/:channelId", async (req, res) => {
+router.get("/channel-playlists/:channelId", async (req, res) => {
   try {
     const { channelId } = req.params;
 
@@ -192,7 +188,7 @@ app.get("/api/youtube/channel-playlists/:channelId", async (req, res) => {
   }
 });
 
-app.get("/api/youtube/channel-playlistItems/:playlistId", async (req, res) => {
+router.get("/channel-playlistItems/:playlistId", async (req, res) => {
   try {
     const { playlistId } = req.params;
 
@@ -215,7 +211,7 @@ app.get("/api/youtube/channel-playlistItems/:playlistId", async (req, res) => {
   }
 });
 
-app.get("/api/youtube/channel-live/:channelId", async (req, res) => {
+router.get("/channel-live/:channelId", async (req, res) => {
   try {
     const { channelId } = req.params;
     const { order = "date" } = req.query;
@@ -259,50 +255,4 @@ app.get("/api/youtube/channel-live/:channelId", async (req, res) => {
   }
 });
 
-// app.get("/api/youtube/videos-details", async (req, res) => {
-//   try {
-//     const { videoIds } = req.query; // Expect a comma-separated list of video IDs
-//     const response = await axios.get(
-//       "https://www.googleapis.com/youtube/v3/videos",
-//       {
-//         params: {
-//           id: videoIds,
-//           key: apiKey,
-//           part: "snippet,contentDetails,statistics",
-//         },
-//       }
-//     );
-//     const videoDetails = response.data.items;
-
-//     const channelIds = [
-//       ...new Set(videoDetails.map((video) => video.snippet.channelId)),
-//     ];
-//     const channelResponse = await axios.get(
-//       "https://www.googleapis.com/youtube/v3/channels",
-//       {
-//         params: {
-//           id: channelIds.join(","),
-//           key: apiKey,
-//           part: "snippet",
-//         },
-//       }
-//     );
-
-//     const channelDetails = channelResponse.data.items.reduce((acc, channel) => {
-//       acc[channel.id] = channel;
-//       return acc;
-//     }, {});
-
-//     res.json({
-//       videoDetails,
-//       channelDetails,
-//     });
-//   } catch (error) {
-//     console.error("Error fetching video details:", error);
-//     res.status(500).json({ error: "Internal server error" });
-//   }
-// });
-
-app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
-});
+module.exports = router;
