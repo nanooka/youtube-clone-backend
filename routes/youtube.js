@@ -3,9 +3,6 @@ const axios = require("axios");
 
 const router = express.Router();
 
-// const apiKey = "AIzaSyCB_jwO0CDx7oIHM3wUXTlU0zwiJOh12x8";
-const apiKey = "AIzaSyB9Y0VMkev57rkase2o37r_xJOceqga-h0";
-
 // API endpoint to fetch YouTube data
 router.get("/search", async (req, res) => {
   try {
@@ -15,7 +12,7 @@ router.get("/search", async (req, res) => {
       {
         params: {
           q: query,
-          key: apiKey,
+          key: process.env.apiKey,
           part: "snippet",
           type: "video",
           maxResults: 20,
@@ -36,7 +33,7 @@ router.get("/channel-search", async (req, res) => {
 
     const params = {
       q: query,
-      key: apiKey,
+      key: process.env.apiKey,
       part: "snippet",
       type: "video",
       maxResults: 20,
@@ -69,7 +66,7 @@ router.get("/videos/:videoId", async (req, res) => {
       {
         params: {
           id: videoId,
-          key: apiKey,
+          key: process.env.apiKey,
           part: "snippet,statistics,player,contentDetails",
         },
       }
@@ -90,7 +87,7 @@ router.get("/channels/:channelId", async (req, res) => {
       {
         params: {
           id: channelId,
-          key: apiKey,
+          key: process.env.apiKey,
           part: "snippet,id,statistics,brandingSettings",
         },
       }
@@ -111,7 +108,7 @@ router.get("/comments/:videoId", async (req, res) => {
       {
         params: {
           videoId: videoId,
-          key: apiKey,
+          key: process.env.apiKey,
           part: "snippet",
           maxResults: 20,
         },
@@ -135,7 +132,7 @@ router.get("/channel-videos/:channelId", async (req, res) => {
       {
         params: {
           channelId: channelId,
-          key: apiKey,
+          key: process.env.apiKey,
           part: "snippet",
           order: order,
           maxResults: 20,
@@ -152,7 +149,7 @@ router.get("/channel-videos/:channelId", async (req, res) => {
       {
         params: {
           id: videoIds,
-          key: apiKey,
+          key: process.env.apiKey,
           part: "snippet,contentDetails,statistics",
         },
       }
@@ -174,7 +171,7 @@ router.get("/channel-playlists/:channelId", async (req, res) => {
       {
         params: {
           channelId: channelId,
-          key: apiKey,
+          key: process.env.apiKey,
           part: "snippet,contentDetails",
           maxResults: 25,
         },
@@ -197,7 +194,7 @@ router.get("/channel-playlistItems/:playlistId", async (req, res) => {
       {
         params: {
           playlistId: playlistId,
-          key: apiKey,
+          key: process.env.apiKey,
           part: "snippet,contentDetails",
           maxResults: 25,
         },
@@ -221,7 +218,7 @@ router.get("/channel-live/:channelId", async (req, res) => {
       {
         params: {
           channelId: channelId,
-          key: apiKey,
+          key: process.env.apiKey,
           part: "snippet",
           eventType: "completed",
           type: "video",
@@ -240,7 +237,7 @@ router.get("/channel-live/:channelId", async (req, res) => {
       {
         params: {
           id: videoIds,
-          key: apiKey,
+          key: process.env.apiKey,
           part: "snippet,contentDetails,statistics,liveStreamingDetails",
         },
       }

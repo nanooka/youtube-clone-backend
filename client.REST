@@ -50,7 +50,7 @@ GET http://localhost:3000/users
 
 ###
 
-GET http://localhost:3000/users/666c30c81556ab5a9221efd2
+GET http://localhost:3000/users/666ca4ea429988986dea6182
 
 ###
 
@@ -76,4 +76,36 @@ Content-Type: application/json
 {
     "email": "newEmail@gmail.com",
     "password": "newemail"
+}
+
+###
+
+POST http://localhost:3000/liked-videos
+Content-Type: application/json
+Authorization: "Bearer "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjZjMzBjODE1NTZhYjVhOTIyMWVmZDIiLCJpYXQiOjE3MTg3MzU3MzcsImV4cCI6MTcxODgyMjEzN30.9TP1xGg-9ETvkofIA0pLWb9YnRNlsxT2-HWx7HpwbqU""
+
+{
+    "userID": "666c30c81556ab5a9221efd2",
+    "id": "TKaZFDAvzZc"
+}
+
+###
+
+POST http://localhost:3000/liked-videos/user-liked-videos
+Content-Type: application/json
+Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjZjMzBjODE1NTZhYjVhOTIyMWVmZDIiLCJpYXQiOjE3MTg2NTM1NjAsImV4cCI6MTcxODczOTk2MH0.6hGq2zkIhPZh61f3UfVoqT0y548dw9im2zywHLmL7MM"
+
+{
+    "userID": "666c30c81556ab5a9221efd2"
+}
+
+###
+
+DELETE http://localhost:3000/liked-videos
+Content-Type: application/json
+Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjZjMzBjODE1NTZhYjVhOTIyMWVmZDIiLCJpYXQiOjE3MTg3MTg3MDYsImV4cCI6MTcxODgwNTEwNn0.gioFOdhxHDLzXg3qiKw4ke4tmRflVxgUBT5QatjCJmo"
+
+{
+    "userID": "666c30c81556ab5a9221efd2",
+    "id": "TiZAVw8snq0"
 }

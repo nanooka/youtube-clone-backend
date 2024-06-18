@@ -97,12 +97,28 @@ router.post("/login", async (req, res) => {
     }
 
     const token = jwt.sign({ userId: user._id }, process.env.MY_SECRET, {
-      expiresIn: "1h",
+      expiresIn: "24h",
     });
 
     const userID = user._id;
     console.log(userID, token);
     res.status(200).json({ userID, token });
+  } catch (err) {
+    res.status(500).json({ message: "Internal server error" });
+  }
+});
+
+// check if email is registered
+router.post("/check-email", async (req, res) => {
+  try {
+    const { email } = req.body;
+    const user = await db.collection("users").findOne({ email });
+
+    if (user) {
+      return res.status(200).json({ registered: true });
+    } else {
+      return res.status(200).json({ registered: false });
+    }
   } catch (err) {
     res.status(500).json({ message: "Internal server error" });
   }
