@@ -6,7 +6,7 @@ const router = express.Router();
 // API endpoint to fetch YouTube data
 router.get("/search", async (req, res) => {
   try {
-    const { query } = req.query;
+    const { query, pageToken } = req.query;
     const response = await axios.get(
       "https://www.googleapis.com/youtube/v3/search",
       {
@@ -16,6 +16,7 @@ router.get("/search", async (req, res) => {
           part: "snippet",
           type: "video",
           maxResults: 20,
+          pageToken: pageToken,
         },
       }
     );

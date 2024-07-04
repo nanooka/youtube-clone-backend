@@ -58,14 +58,14 @@ POST http://localhost:3000/users
 Content-Type: application/json
 
 {
-    "email": "helllo@gmail.com",
-    "password": "newemail",
-    "firstName": "saxeli",
-    "lastName": "gvari",
-    "gender": "gender",
-    "day": "12",
-    "month": "January",
-    "year": "1990"
+    "email": "nanuka@gmail.com",
+    "password": "nanuka",
+    "firstName": "nanuka",
+    "lastName": "grdzelishvili",
+    "gender": "Female",
+    "day": "26",
+    "month": "June",
+    "year": "1999"
 }
 
 ###
@@ -74,8 +74,8 @@ POST http://localhost:3000/users/login
 Content-Type: application/json
 
 {
-    "email": "newEmail@gmail.com",
-    "password": "newemail"
+    "email": "nanuka@gmail.com",
+    "password": "nanuka"
 }
 
 ###
@@ -108,4 +108,47 @@ Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjZj
 {
     "userID": "666c30c81556ab5a9221efd2",
     "id": "TiZAVw8snq0"
+}
+
+###
+
+POST http://localhost:3000/watch-later-videos
+Content-Type: application/json
+Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2Njc5N2ZkNTIxMWE3MWEwMGIzNTJlZTciLCJpYXQiOjE3MTk5MTc4MDMsImV4cCI6MTcyMDAwNDIwM30.d9Vf2nPmvg0ah_130Plgc9bzvA6TORZBJuXtQmw-hZE"
+
+{
+    "userID": "66797fd5211a71a00b352ee7",
+    "id": "r6Cwze21qLQ"
+}
+
+###
+
+POST http://localhost:3000/watch-later-videos/user-watch-later-videos
+Content-Type: application/json
+Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2Njc5N2ZkNTIxMWE3MWEwMGIzNTJlZTciLCJpYXQiOjE3MTk5MTc4MDMsImV4cCI6MTcyMDAwNDIwM30.d9Vf2nPmvg0ah_130Plgc9bzvA6TORZBJuXtQmw-hZE"
+
+{
+    "userID": "66797fd5211a71a00b352ee7"
+}
+
+###
+
+POST http://localhost:3000/subscriptions
+Content-Type: application/json
+Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2Njc5N2ZkNTIxMWE3MWEwMGIzNTJlZTciLCJpYXQiOjE3MjAwMTUwMDYsImV4cCI6MTcyMDEwMTQwNn0.b_BtLXK7mNQNbHLSgbstxSnXq_9Sahs7LawU8hO4J3U"
+
+{
+    "userID": "66797fd5211a71a00b352ee7",
+    "channelID": "UC9zX2xZIJ4cnwRsgBpHGvMg"
+}
+
+###
+
+DELETE http://localhost:3000/subscriptions
+Content-Type: application/json
+Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2Njc5N2ZkNTIxMWE3MWEwMGIzNTJlZTciLCJpYXQiOjE3MjAwMTUwMDYsImV4cCI6MTcyMDEwMTQwNn0.b_BtLXK7mNQNbHLSgbstxSnXq_9Sahs7LawU8hO4J3U"
+
+{
+    "userID": "66797fd5211a71a00b352ee7",
+    "channelID": "UC9zX2xZIJ4cnwRsgBpHGvMg"
 }
