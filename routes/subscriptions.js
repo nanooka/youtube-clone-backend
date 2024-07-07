@@ -50,4 +50,48 @@ router.delete("/", async (req, res) => {
   }
 });
 
+// get user's subscriptions http://localhost:3000/subscriptions/user-subscriptions
+router.post("/user-subscriptions", async (req, res) => {
+  try {
+    let { userID } = req.body;
+    if (!userID) {
+      return res.status(400).json({ error: "UserID is required" });
+    }
+    const userSubscriptions = await db
+      .collection("subscriptions")
+      .find({ userID })
+      .toArray();
+    res.status(200).json(userSubscriptions);
+  } catch (err) {
+    console.log(err);
+    res.status(500).json({ error: "Could not get subscriptions" });
+  }
+});
+
+// get certain subscription by channelID
+router.post("/user-subscription", async (req, res) => {
+  try {
+    let { userID, channelID } = req.body;
+
+    if (!userID || !channelID) {
+      return res
+        .status(400)
+        .json({ error: "UserID and ChannelID are required" });
+    }
+
+    const userSubscription = await db
+      .collection("subscriptions")
+      .findOne({ userID, channelID });
+
+    if (userSubscription) {
+      res.status(200).json({ isSubscribed: true });
+    } else {
+      res.status(200).json({ isSubscribed: false });
+    }
+  } catch (err) {
+    console.log(err);
+    res.status(500).json({ error: "Could not get subscription" });
+  }
+});
+
 module.exports = router;
