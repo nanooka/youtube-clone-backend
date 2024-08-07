@@ -11,7 +11,7 @@ connectToDb((err) => {
   }
 });
 
-// add video to watch later list http://localhost:3000/watch-later-videos
+// add video to watch later list http://localhost:5000/watch-later-videos
 router.post("/", async (req, res) => {
   let { userID, id } = req.body;
 
@@ -31,7 +31,7 @@ router.post("/", async (req, res) => {
   }
 });
 
-// get user's liked videos list http:/localhost:3000/watch-later-videos/user-watch-later-videos
+// get user's liked videos list http:/localhost:5000/watch-later-videos/user-watch-later-videos
 router.post("/user-watch-later-videos", async (req, res) => {
   try {
     const userID = req.body.userID;

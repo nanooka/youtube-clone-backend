@@ -11,7 +11,7 @@ connectToDb((err) => {
   }
 });
 
-// subscribe channel http://localhost:3000/subscriptions
+// subscribe channel http://localhost:5000/subscriptions
 router.post("/", async (req, res) => {
   let { userID, channelID } = req.body;
 
@@ -50,7 +50,7 @@ router.delete("/", async (req, res) => {
   }
 });
 
-// get user's subscriptions http://localhost:3000/subscriptions/user-subscriptions
+// get user's subscriptions http://localhost:5000/subscriptions/user-subscriptions
 router.post("/user-subscriptions", async (req, res) => {
   try {
     let { userID } = req.body;

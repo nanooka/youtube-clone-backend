@@ -18,4 +18,4 @@ app.use("/liked-videos", LikedVideos);
 app.use("/watch-later-videos", WatchLaterVideos);
 app.use("/subscriptions", Subscriptions);
 
-app.listen(3000, () => console.log("server started"));
+app.listen(5000, () => console.log("server started"));

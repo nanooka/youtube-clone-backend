@@ -16,7 +16,7 @@ connectToDb((err) => {
   }
 });
 
-// get all users http://localhost:3000/users
+// get all users http://localhost:5000/users
 router.get("/", (req, res) => {
   let users = [];
   db.collection("users")
@@ -31,7 +31,7 @@ router.get("/", (req, res) => {
     });
 });
 
-// get one user http://localhost:3000/users/666c30c81556ab5a9221efd2
+// get one user http://localhost:5000/users/666c30c81556ab5a9221efd2
 router.get("/:id", (req, res) => {
   if (ObjectId.isValid(req.params.id)) {
     db.collection("users")
@@ -81,7 +81,7 @@ router.post("/", async (req, res) => {
   }
 });
 
-// log in user http:localhost:3000/users/login
+// log in user http:localhost:5000/users/login
 router.post("/login", async (req, res) => {
   try {
     const { email, password } = req.body;

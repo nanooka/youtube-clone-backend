@@ -2,16 +2,16 @@ https://www.googleapis.com/youtube/v3/videos/?key=AIzaSyCB_jwO0CDx7oIHM3wUXTlU0z
 
 ###
 
-http://localhost:3000/api/youtube/search?query=hello&part="snippet"&type="video&maxResult=10
+http://localhost:5000/api/youtube/search?query=hello&part="snippet"&type="video&maxResult=10
 
 ###
 
-http://localhost:3000/api/youtube/videos/YQHsXMglC9A?&part="snippet,statistics,player,contentDetails"
+http://localhost:5000/api/youtube/videos/YQHsXMglC9A?&part="snippet,statistics,player,contentDetails"
 
 
 ###
 
-http://localhost:3000/api/youtube/channels/UComP_epzeKzvBX156r6pm1Q
+http://localhost:5000/api/youtube/channels/UComP_epzeKzvBX156r6pm1Q
 
 ###
 
@@ -19,25 +19,25 @@ https://www.googleapis.com/youtube/v3/channels/?id=UComP_epzeKzvBX156r6pm1Q&key=
 
 ###
 
-http://localhost:3000/api/youtube/comments/YQHsXMglC9A
+http://localhost:5000/api/youtube/comments/YQHsXMglC9A
 
 ###
 
-http://localhost:3000/api/youtube/channel-videos/UComP_epzeKzvBX156r6pm1Q
+http://localhost:5000/api/youtube/channel-videos/UComP_epzeKzvBX156r6pm1Q
 
 ###
-http://localhost:3000/api/youtube/channel-playlists/UComP_epzeKzvBX156r6pm1Q
-
-###
-
-http://localhost:3000/api/youtube/channel-playlistItems/PLk7ySTbOWfFCZJ44nti0lz7nnMNMilFbs
+http://localhost:5000/api/youtube/channel-playlists/UComP_epzeKzvBX156r6pm1Q
 
 ###
 
-http://localhost:3000/api/youtube/channel-live/UCPdYQsNTgNxyWiPtCCgB5xg
+http://localhost:5000/api/youtube/channel-playlistItems/PLk7ySTbOWfFCZJ44nti0lz7nnMNMilFbs
 
 ###
-http://localhost:3000/api/youtube/channel-search?query=hello&channelId=UC9zX2xZIJ4cnwRsgBpHGvMg
+
+http://localhost:5000/api/youtube/channel-live/UCPdYQsNTgNxyWiPtCCgB5xg
+
+###
+http://localhost:5000/api/youtube/channel-search?query=hello&channelId=UC9zX2xZIJ4cnwRsgBpHGvMg
 
 {
     "query": "hello",
@@ -46,15 +46,15 @@ http://localhost:3000/api/youtube/channel-search?query=hello&channelId=UC9zX2xZI
 
 ###
 
-GET http://localhost:3000/users
+GET http://localhost:5000/users
 
 ###
 
-GET http://localhost:3000/users/666ca4ea429988986dea6182
+GET http://localhost:5000/users/666ca4ea429988986dea6182
 
 ###
 
-POST http://localhost:3000/users
+POST http://localhost:5000/users
 Content-Type: application/json
 
 {
@@ -70,7 +70,7 @@ Content-Type: application/json
 
 ###
 
-POST http://localhost:3000/users/login
+POST http://localhost:5000/users/login
 Content-Type: application/json
 
 {
@@ -80,7 +80,7 @@ Content-Type: application/json
 
 ###
 
-POST http://localhost:3000/liked-videos
+POST http://localhost:5000/liked-videos
 Content-Type: application/json
 Authorization: "Bearer "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjZjMzBjODE1NTZhYjVhOTIyMWVmZDIiLCJpYXQiOjE3MTg3MzU3MzcsImV4cCI6MTcxODgyMjEzN30.9TP1xGg-9ETvkofIA0pLWb9YnRNlsxT2-HWx7HpwbqU""
 
@@ -91,7 +91,7 @@ Authorization: "Bearer "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjZ
 
 ###
 
-POST http://localhost:3000/liked-videos/user-liked-videos
+POST http://localhost:5000/liked-videos/user-liked-videos
 Content-Type: application/json
 Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjZjMzBjODE1NTZhYjVhOTIyMWVmZDIiLCJpYXQiOjE3MTg2NTM1NjAsImV4cCI6MTcxODczOTk2MH0.6hGq2zkIhPZh61f3UfVoqT0y548dw9im2zywHLmL7MM"
 
@@ -101,7 +101,7 @@ Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjZj
 
 ###
 
-DELETE http://localhost:3000/liked-videos
+DELETE http://localhost:5000/liked-videos
 Content-Type: application/json
 Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjZjMzBjODE1NTZhYjVhOTIyMWVmZDIiLCJpYXQiOjE3MTg3MTg3MDYsImV4cCI6MTcxODgwNTEwNn0.gioFOdhxHDLzXg3qiKw4ke4tmRflVxgUBT5QatjCJmo"
 
@@ -112,7 +112,7 @@ Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjZj
 
 ###
 
-POST http://localhost:3000/watch-later-videos
+POST http://localhost:5000/watch-later-videos
 Content-Type: application/json
 Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2Njc5N2ZkNTIxMWE3MWEwMGIzNTJlZTciLCJpYXQiOjE3MTk5MTc4MDMsImV4cCI6MTcyMDAwNDIwM30.d9Vf2nPmvg0ah_130Plgc9bzvA6TORZBJuXtQmw-hZE"
 
@@ -123,7 +123,7 @@ Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2Njc5
 
 ###
 
-POST http://localhost:3000/watch-later-videos/user-watch-later-videos
+POST http://localhost:5000/watch-later-videos/user-watch-later-videos
 Content-Type: application/json
 Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2Njc5N2ZkNTIxMWE3MWEwMGIzNTJlZTciLCJpYXQiOjE3MTk5MTc4MDMsImV4cCI6MTcyMDAwNDIwM30.d9Vf2nPmvg0ah_130Plgc9bzvA6TORZBJuXtQmw-hZE"
 
@@ -133,7 +133,7 @@ Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2Njc5
 
 ###
 
-POST http://localhost:3000/subscriptions
+POST http://localhost:5000/subscriptions
 Content-Type: application/json
 Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2Njc5N2ZkNTIxMWE3MWEwMGIzNTJlZTciLCJpYXQiOjE3MjAwMTUwMDYsImV4cCI6MTcyMDEwMTQwNn0.b_BtLXK7mNQNbHLSgbstxSnXq_9Sahs7LawU8hO4J3U"
 
@@ -144,7 +144,7 @@ Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2Njc5
 
 ###
 
-DELETE http://localhost:3000/subscriptions
+DELETE http://localhost:5000/subscriptions
 Content-Type: application/json
 Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2Njc5N2ZkNTIxMWE3MWEwMGIzNTJlZTciLCJpYXQiOjE3MjAwMTUwMDYsImV4cCI6MTcyMDEwMTQwNn0.b_BtLXK7mNQNbHLSgbstxSnXq_9Sahs7LawU8hO4J3U"
 
@@ -155,7 +155,7 @@ Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2Njc5
 
 ###
 
-POST http://localhost:3000/subscriptions/user-subscriptions
+POST http://localhost:5000/subscriptions/user-subscriptions
 Content-Type: application/json
 Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2Njc5N2ZkNTIxMWE3MWEwMGIzNTJlZTciLCJpYXQiOjE3MjAzNjQ4OTUsImV4cCI6MTcyMDQ1MTI5NX0.1xolEnCo4h4x7vTJP_nlqFztL_ryy30IRc4b861E_dg"
 
@@ -165,7 +165,7 @@ Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2Njc5
 
 ###
 
-POST http://localhost:3000/subscriptions/user-subscription
+POST http://localhost:5000/subscriptions/user-subscription
 Content-Type: application/json
 Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2Njc5N2ZkNTIxMWE3MWEwMGIzNTJlZTciLCJpYXQiOjE3MjAzNjUxMjksImV4cCI6MTcyMDQ1MTUyOX0.WhxOlYAYaDeYdzudZMrG34hZAoOQe8ilJVkdoy-WsvI"
 

@@ -11,7 +11,7 @@ connectToDb((err) => {
   }
 });
 
-// add video to liked videos http://localhost:3000/liked-videos
+// add video to liked videos http://localhost:5000/liked-videos
 router.post("/", async (req, res) => {
   let { userID, id } = req.body;
 
@@ -47,7 +47,7 @@ router.delete("/", async (req, res) => {
   }
 });
 
-// get user's liked videos list http:/localhost:3000/liked-videos/user-liked-videos
+// get user's liked videos list http:/localhost:5000/liked-videos/user-liked-videos
 router.post("/user-liked-videos", async (req, res) => {
   try {
     const userID = req.body.userID;
