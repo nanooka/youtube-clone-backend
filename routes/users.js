@@ -1,7 +1,7 @@
 const express = require("express");
 const { ObjectId } = require("mongodb");
 const { connectToDb, getDb } = require("../db");
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 
 const User = require("../models/user");
