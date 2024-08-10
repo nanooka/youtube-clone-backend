@@ -16,7 +16,7 @@ RUN npm install
 COPY . .
 
 # Step 6: Expose the port that the app runs on
-EXPOSE 5000
+EXPOSE 5001
 
 # Step 7: Start the application
 CMD ["node", "server.js"]

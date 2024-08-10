@@ -58,10 +58,10 @@ POST http://localhost:5000/users
 Content-Type: application/json
 
 {
-    "email": "nanuka@gmail.com",
-    "password": "nanuka",
-    "firstName": "nanuka",
-    "lastName": "grdzelishvili",
+    "email": "hello@gmail.com",
+    "password": "asdad",
+    "firstName": "rostomi",
+    "lastName": "rostomi",
     "gender": "Female",
     "day": "26",
     "month": "June",
