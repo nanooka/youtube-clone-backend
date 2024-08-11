@@ -54,14 +54,14 @@ GET http://localhost:5000/users/666ca4ea429988986dea6182
 
 ###
 
-POST http://localhost:5000/users
+POST http://localhost:8080/users
 Content-Type: application/json
 
 {
-    "email": "hello@gmail.com",
-    "password": "asdad",
-    "firstName": "rostomi",
-    "lastName": "rostomi",
+    "email": "wtf@gmail.com",
+    "password": "wtf",
+    "firstName": "wtf",
+    "lastName": "lala",
     "gender": "Female",
     "day": "26",
     "month": "June",
@@ -70,12 +70,12 @@ Content-Type: application/json
 
 ###
 
-POST http://localhost:5000/users/login
+POST http://localhost:8080/users/login
 Content-Type: application/json
 
 {
-    "email": "nanuka@gmail.com",
-    "password": "nanuka"
+    "email": "wtf@gmail.com",
+    "password": "wtf"
 }
 
 ###

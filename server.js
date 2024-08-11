@@ -3,7 +3,11 @@ require("dotenv").config();
 const cors = require("cors");
 
 const app = express();
-app.use(cors());
+app.use(
+  cors({
+    origin: "*",
+  })
+);
 app.use(express.json());
 
 const users = require("./routes/users");
@@ -20,4 +24,4 @@ app.use("/watch-later-videos", WatchLaterVideos);
 app.use("/subscriptions", Subscriptions);
 app.use("/", hello);
 
-app.listen(5000, () => console.log("server started"));
+app.listen(8080, () => console.log("server started on port 8080"));

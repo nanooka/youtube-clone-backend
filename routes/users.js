@@ -1,7 +1,7 @@
 const express = require("express");
 const { ObjectId } = require("mongodb");
 const { connectToDb, getDb } = require("../db");
-const bcrypt = require("bcryptjs");
+const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
 const User = require("../models/user");
@@ -92,6 +92,7 @@ router.post("/login", async (req, res) => {
     }
 
     const passwordMatch = await bcrypt.compare(password, user.password);
+    console.log("match", passwordMatch);
     if (!passwordMatch) {
       return res.status(401).json({ error: "Incorrect password" });
     }
@@ -99,6 +100,13 @@ router.post("/login", async (req, res) => {
     const token = jwt.sign({ userId: user._id }, process.env.MY_SECRET, {
       expiresIn: "24h",
     });
+
+    if (!process.env.MY_SECRET) {
+      console.error("JWT secret is not defined");
+      return res
+        .status(500)
+        .json({ message: "Internal server error: JWT secret missing" });
+    }
 
     const userID = user._id;
     console.log(userID, token);

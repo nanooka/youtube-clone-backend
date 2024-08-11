@@ -251,7 +251,7 @@ app.get("/api/youtube/channel-live/:channelId", async (req, res) => {
       }
     );
 
-    console.log("Video Details Response:", videoDetailsResponse.data);
+    // console.log("Video Details Response:", videoDetailsResponse.data);
 
     res.json(videoDetailsResponse.data);
   } catch (error) {
@@ -305,5 +305,5 @@ app.get("/api/youtube/channel-live/:channelId", async (req, res) => {
 // });
 
 app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
+  // console.log(`Server is running on http://localhost:${PORT}`);
 });
